@@ -1,6 +1,7 @@
-import { createBrowserRouter, Navigate } from 'react-router-dom';
+import { createBrowserRouter } from 'react-router-dom';
 import Layout from './layout/Layout';
-import Contact from './pages/Contact';
+import Courses from './pages/Courses';
+import Curriculum from './pages/Curriculum';
 import Dashboard from './pages/Dashboard';
 import Discussion from './pages/Discussion';
 import ErrorPage from './pages/ErrorPage';
@@ -11,10 +12,10 @@ const router = createBrowserRouter([
     element: <Layout />,
     errorElement: <ErrorPage />,
     children: [
-      { index: true, element: <Navigate to="dashboard" replace /> },
-      { path: 'dashboard', element: <Dashboard /> },
+      { index: true, element: <Dashboard /> },
+      { path: 'courses', element: <Courses /> },
+      { path: 'curriculum', element: <Curriculum /> },
       { path: 'discussion', element: <Discussion /> },
-      { path: 'contact', element: <Contact /> },
     ],
   },
 ]);
