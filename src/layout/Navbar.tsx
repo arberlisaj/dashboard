@@ -1,6 +1,6 @@
-import Logo from '@/assets/buildings.svg';
-import MenuSvg from '@/assets/list.svg';
-import ProfileSvg from '@/assets/person-circle.svg';
+import Logo from '@/assets/navbar/buildings.svg';
+import MenuSvg from '@/assets/navbar/list.svg';
+import ProfileSvg from '@/assets/navbar/person-circle.svg';
 import DarkMode from '@/components/DarkMode';
 import { Link } from 'react-router-dom';
 
@@ -20,7 +20,7 @@ const Navbar = ({ handleAsideState }: Props) => {
         <button className="p-0.5">
           <img src={ProfileSvg} alt="profile" />
         </button>
-        <button onClick={handleAsideState} className="sm:hidden">
+        <button onClick={handleAsideState} className="md:hidden">
           <img src={MenuSvg} alt="Menu" />
         </button>
       </div>
