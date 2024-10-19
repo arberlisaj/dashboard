@@ -1,5 +1,5 @@
+import DarkModeSvg from '@/assets/navbar/brightness-high-fill.svg';
 import LightModeSvg from '@/assets/navbar/brightness-high.svg';
-import DarkModeSvg from '@/assets/navbar/cloud-moon.svg';
 import { useEffect, useState } from 'react';
 
 const DarkMode = () => {

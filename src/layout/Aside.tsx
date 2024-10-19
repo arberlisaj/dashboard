@@ -1,8 +1,8 @@
-import { NavLink } from 'react-router-dom';
 import CoursesSvg from '@/assets/aside/book.svg';
 import CurriculumSvg from '@/assets/aside/bookmark-check.svg';
+import DiscussionSvg from '@/assets/aside/chat.svg';
 import DashboardSvg from '@/assets/aside/house-door.svg';
-import DiscussionSvg from '@/assets/aside/chat-left.svg';
+import { NavLink } from 'react-router-dom';
 
 interface Props {
   handleCloseAside?: () => void;
@@ -13,7 +13,11 @@ const Aside = ({ handleCloseAside, className }: Props) => {
   console.log(handleCloseAside);
   return (
     <aside className={'h-screen bg-aside_bg text-white hidden ' + className}>
-      <h1 className="p-[13px] border-b border-gray-600">Navigation</h1>
+      <header className="border-b border-gray-400">
+        <h1 className="px-2 pb-1 pt-[25px] text-sm text-gray-100">
+          Navigation
+        </h1>
+      </header>
       <ul>
         <li className="aside-li">
           <NavLink to="/">
