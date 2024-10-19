@@ -1,26 +1,21 @@
 import Logo from '@/assets/navbar/buildings.svg';
 import MenuSvg from '@/assets/navbar/list.svg';
-import ProfileSvg from '@/assets/navbar/person-circle.svg';
 import DarkMode from '@/components/DarkMode';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 interface Props {
   handleAsideState: () => void;
 }
 
 const Navbar = ({ handleAsideState }: Props) => {
-  const navigate = useNavigate();
   return (
-    <nav className="p-2 py-3 h-fit w-full flex justify-between gap-2 items-center bg-navbar_bg">
+    <nav className="p-2 md:px-3 py-3 h-fit w-full flex justify-between gap-2 items-center bg-navbar_bg">
       <Link className="text-white flex items-center gap-0.5" to="/">
         <img src={Logo} alt="Website Logo" />
         University
       </Link>
       <div className="flex items-center gap-1">
         <DarkMode />
-        <button className="p-0.5" onClick={() => navigate('/profile')}>
-          <img src={ProfileSvg} alt="profile" />
-        </button>
         <button onClick={handleAsideState} className="md:hidden">
           <img src={MenuSvg} alt="Menu" />
         </button>
