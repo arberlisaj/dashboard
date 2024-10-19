@@ -5,6 +5,7 @@ import Curriculum from './pages/Curriculum';
 import Dashboard from './pages/Dashboard';
 import Discussion from './pages/Discussion';
 import ErrorPage from './pages/ErrorPage';
+import Profile from './pages/Profile';
 
 const router = createBrowserRouter([
   {
@@ -16,6 +17,7 @@ const router = createBrowserRouter([
       { path: 'courses', element: <Courses /> },
       { path: 'curriculum', element: <Curriculum /> },
       { path: 'discussion', element: <Discussion /> },
+      { path: 'profile', element: <Profile /> },
     ],
   },
 ]);
