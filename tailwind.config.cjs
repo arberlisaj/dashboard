@@ -13,6 +13,7 @@ module.exports = {
         secondary: 'hsl(var(--secondary))',
         navbar_bg: 'var(--navbar-bg)',
         aside_bg: 'var(--aside-bg)',
+        border: 'var(--border)',
       },
       borderRadius: {
         lg: 'var(--radius)',

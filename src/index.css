@@ -12,6 +12,7 @@
 
     --navbar-bg: #0f172a;
     --aside-bg: #0f172a;
+    --border: #9db1e0a8;
   }
 
   .dark {
@@ -19,12 +20,22 @@
     --primary: 210 40% 98%;
     --secondary: 0 0% 0%;
     --input: 217.2 32.6% 17.5%;
+    --border: #223869;
   }
 }
 
 @layer base {
   body {
     @apply bg-background text-primary;
+  }
+
+  table,
+  td,
+  th {
+    @apply border border-border p-2;
+  }
+  table th {
+    @apply text-left;
   }
 
   .aside-li a {
