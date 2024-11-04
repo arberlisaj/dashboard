@@ -2,17 +2,21 @@ import userService, { User } from '@/services/user-service';
 import { CanceledError } from 'axios';
 import { useEffect, useState } from 'react';
 
-const useUsers = () => {
+const useUsers = (userId?: string) => {
   const [users, setUsers] = useState<User[]>([]);
+  const [user, setUser] = useState<User>();
   const [error, setError] = useState('');
   const [isLoading, setLoading] = useState(false);
 
   useEffect(() => {
     setLoading(true);
-    const { request, cancel } = userService.getAll<User>();
+    const { request, cancel } = userService.getAll<User>(userId);
     request
       .then((res) => {
-        setUsers(res.data);
+        if (Array.isArray(res.data)) {
+          setUsers(res.data);
+        }
+        setUser(res.data);
         setLoading(false);
       })
       .catch((err) => {
@@ -24,7 +28,7 @@ const useUsers = () => {
     return () => cancel();
   }, []);
 
-  return { users, error, isLoading, setUsers, setError };
+  return { users, user, error, isLoading, setUsers, setError };
 };
 
 export default useUsers;

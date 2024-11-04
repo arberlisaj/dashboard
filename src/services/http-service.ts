@@ -9,11 +9,11 @@ class HttpService {
   constructor(endpoint: string) {
     this.endpoint = endpoint;
   }
-  getAll<T>() {
+
+  getAll<T>(id?: string) {
     const controller = new AbortController();
-    const request = apiClient.get<T[]>(this.endpoint, {
-      signal: controller.signal,
-    });
+    const url = id ? `${this.endpoint}/${id}` : this.endpoint;
+    const request = apiClient.get<T>(url, { signal: controller.signal });
     return { request, cancel: () => controller.abort() };
   }
   delete(id: number) {
