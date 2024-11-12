@@ -1,5 +1,14 @@
+import Button from '@/components/Button';
+import useAuthStore from '@/store';
+
 const Profile = () => {
-  return <div>Profile</div>;
+  const { logout } = useAuthStore();
+  return (
+    <div>
+      <h1>Wassup dawg</h1>
+      <Button handleClick={() => logout()}>GTFO</Button>
+    </div>
+  );
 };
 
 export default Profile;
