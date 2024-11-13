@@ -1,22 +1,22 @@
-import '../index.css';
-
 import Button from '@/components/Button';
-import useAuthStore from '@/store';
-import { useNavigate } from 'react-router-dom';
+import LoginForm from '@/components/LoginForm';
+import SignupForm from '@/components/SignupForm';
+import { useState } from 'react';
 
 const Login = () => {
-  const navigate = useNavigate();
-  const { login } = useAuthStore();
+  // TODO: Refactor
+  const [loginState, setLoginState] = useState(false);
 
-  function handleLogin() {
-    login('arberlisaj');
-    navigate('/');
+  function handleToggle() {
+    setLoginState((prev) => !prev);
   }
 
   return (
-    <div>
-      <h1>You are not authenticated!</h1>
-      <Button handleClick={handleLogin}>Login</Button>
+    <div className="bg-background min-h-screen p-2">
+      {loginState ? <LoginForm /> : <SignupForm />}
+      <Button handleClick={handleToggle}>
+        {loginState ? 'Dont have ' : 'Have '} an account?
+      </Button>
     </div>
   );
 };

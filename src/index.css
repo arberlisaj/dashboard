@@ -29,6 +29,10 @@
     @apply bg-background text-primary;
   }
 
+  input {
+    @apply border block px-2 py-1;
+  }
+
   table,
   td,
   th {

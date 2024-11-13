@@ -6,7 +6,9 @@ const Profile = () => {
   return (
     <div>
       <h1>Wassup dawg</h1>
-      <Button handleClick={() => logout()}>GTFO</Button>
+      <Button className="bg-red-600 text-white" handleClick={() => logout()}>
+        Logout
+      </Button>
     </div>
   );
 };
