@@ -4,10 +4,11 @@ import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import * as z from 'zod';
 import Button from './Button';
+import FormValidationMessage from './FormValidationMessage';
 
 const schema = z.object({
-  username: z.string().min(1, 'Username is required'),
-  password: z.string().min(6, 'Password must be at least 6 characters long'),
+  username: z.string().min(4, 'Username is required'),
+  password: z.string().min(8, 'Password must be at least 8 characters long'),
 });
 
 type FormData = z.infer<typeof schema>;
@@ -37,10 +38,14 @@ const LoginForm = () => {
     <form onSubmit={handleSubmit(onSubmit)}>
       <label htmlFor="username">Username</label>
       <input id="username" {...register('username')} />
-      {errors.username && <p>{errors.username.message}</p>}
+      {errors.username && (
+        <FormValidationMessage errorMessage={errors.username.message} />
+      )}
       <label htmlFor="password">Password</label>
       <input id="password" type="password" {...register('password')} />
-      {errors.password && <p>{errors.password.message}</p>}
+      {errors.password && (
+        <FormValidationMessage errorMessage={errors.password.message} />
+      )}
       <Button type="submit" className="bg-green-600 text-white">
         Login
       </Button>

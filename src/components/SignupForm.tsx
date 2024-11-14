@@ -4,13 +4,17 @@ import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import * as z from 'zod';
 import Button from './Button';
+import FormValidationMessage from './FormValidationMessage';
 
 const schema = z.object({
-  name: z.string().min(1, 'Name is required'),
-  lastName: z.string().min(1, 'Last name is required'),
-  username: z.string().min(1, 'Username is required'),
-  email: z.string().email('Invalid email').min(1, 'Email is required'),
-  password: z.string().min(6, 'Password must be at least 6 characters long'),
+  name: z.string().min(4, 'Name should be at least 4 characters long'),
+  lastName: z.string().min(3, 'Last name is required'),
+  username: z.string().min(4, 'Username should be at least 4 characters long'),
+  email: z
+    .string()
+    .email('Invalid email')
+    .min(6, 'Email should be at least 6 characters long'),
+  password: z.string().min(8, 'Password must be at least 8 characters long'),
 });
 
 type FormData = z.infer<typeof schema>;
@@ -40,23 +44,33 @@ const SignupForm = () => {
     <form onSubmit={handleSubmit(onSubmit)}>
       <label htmlFor="name">Name</label>
       <input id="name" {...register('name')} />
-      {errors.name && <p>{errors.name.message}</p>}
+      {errors.name && (
+        <FormValidationMessage errorMessage={errors.name.message} />
+      )}
 
       <label htmlFor="lastName">Last Name</label>
       <input id="lastName" {...register('lastName')} />
-      {errors.lastName && <p>{errors.lastName.message}</p>}
+      {errors.lastName && (
+        <FormValidationMessage errorMessage={errors.lastName.message} />
+      )}
 
       <label htmlFor="username">Username</label>
       <input id="username" {...register('username')} />
-      {errors.username && <p>{errors.username.message}</p>}
+      {errors.username && (
+        <FormValidationMessage errorMessage={errors.username.message} />
+      )}
 
       <label htmlFor="email">Email</label>
       <input id="email" {...register('email')} />
-      {errors.email && <p>{errors.email.message}</p>}
+      {errors.email && (
+        <FormValidationMessage errorMessage={errors.email.message} />
+      )}
 
       <label htmlFor="password">Password</label>
       <input id="password" type="password" {...register('password')} />
-      {errors.password && <p>{errors.password.message}</p>}
+      {errors.password && (
+        <FormValidationMessage errorMessage={errors.password.message} />
+      )}
 
       <Button type="submit" className="bg-green-600 text-white">
         Signup
