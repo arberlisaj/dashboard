@@ -11,8 +11,8 @@ const Layout = () => {
   }, [isOpen]);
 
   return (
-    <main className="md:grid grid-cols-5 ">
-      <Aside className="md:block pl-2" />
+    <main className="grid-cols-5 bg-background md:grid">
+      <Aside className="pl-2 md:block" />
       <section className="col-span-4">
         <Navbar handleAsideState={() => setIsOpen((prevValue) => !prevValue)} />
         <div className="p-2">

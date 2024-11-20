@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const DashboardLogo = ({ className }: { className?: string }) => {
   return (
     <Link
-      className={'text-white flex items-center gap-0.5 ' + className}
+      className={'flex items-center gap-0.5 text-white ' + className}
       to="/"
     >
       <img src={logoSvg} alt="Website DashboardLogo" />

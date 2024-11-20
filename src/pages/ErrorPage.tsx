@@ -16,7 +16,7 @@ const ErrorPage = () => {
       };
 
   return (
-    <div className="w-fit h-fit text-center my-5 mx-auto">
+    <div className="mx-auto my-5 h-fit w-fit text-center">
       <ErrorFallback title={response.title} message={response.message} />
     </div>
   );

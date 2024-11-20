@@ -15,7 +15,7 @@ interface Props {
 const Aside = ({ handleCloseAside, className }: Props) => {
   console.log(handleCloseAside);
   return (
-    <aside className={'h-screen bg-aside_bg text-white hidden ' + className}>
+    <aside className={'hidden h-screen bg-aside_bg text-white ' + className}>
       <header className="border-b border-gray-700 py-3 pl-3">
         <DashboardLogo />
       </header>
@@ -45,7 +45,7 @@ const Aside = ({ handleCloseAside, className }: Props) => {
           </NavLink>
         </li>
       </ul>
-      <hr className="border-gray-700 my-1" />
+      <hr className="my-1 border-gray-700" />
       <ul className="">
         <li className="aside-li">
           <NavLink to="/profile">
@@ -60,7 +60,7 @@ const Aside = ({ handleCloseAside, className }: Props) => {
           </NavLink>
         </li>
       </ul>
-      <hr className="border-gray-700 my-1" />
+      <hr className="my-1 border-gray-700" />
     </aside>
   );
 };

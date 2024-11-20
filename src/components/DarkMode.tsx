@@ -18,7 +18,7 @@ const DarkMode = () => {
 
   return (
     <button
-      className="p-0.5 rounded"
+      className="rounded p-0.5"
       onClick={() =>
         setTheme((prevValue) => (prevValue === 'dark' ? 'light' : 'dark'))
       }

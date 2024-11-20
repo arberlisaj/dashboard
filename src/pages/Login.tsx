@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 const Login = () => {
   // TODO: Refactor
-  const [loginState, setLoginState] = useState(false);
+  const [loginState, setLoginState] = useState(true);
 
   function handleToggle() {
     setLoginState((prev) => !prev);

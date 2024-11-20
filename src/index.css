@@ -64,7 +64,7 @@
 
 @layer base {
   body {
-    @apply bg-background text-primary;
+    @apply text-primary;
   }
 
   input {
