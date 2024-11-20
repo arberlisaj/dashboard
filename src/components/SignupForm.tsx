@@ -3,8 +3,10 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import * as z from 'zod';
-import Button from './Button';
 import FormValidationMessage from './FormValidationMessage';
+import { Button } from './ui/button';
+import { Label } from './ui/label';
+import { Input } from './ui/input';
 
 const schema = z.object({
   name: z.string().min(4, 'Name should be at least 4 characters long'),
@@ -42,38 +44,38 @@ const SignupForm = () => {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <label htmlFor="name">Name</label>
-      <input id="name" {...register('name')} />
+      <Label htmlFor="name">Name</Label>
+      <Input id="name" {...register('name')} />
       {errors.name && (
         <FormValidationMessage errorMessage={errors.name.message} />
       )}
 
-      <label htmlFor="lastName">Last Name</label>
-      <input id="lastName" {...register('lastName')} />
+      <Label htmlFor="lastName">Last Name</Label>
+      <Input id="lastName" {...register('lastName')} />
       {errors.lastName && (
         <FormValidationMessage errorMessage={errors.lastName.message} />
       )}
 
-      <label htmlFor="username">Username</label>
-      <input id="username" {...register('username')} />
+      <Label htmlFor="username">Username</Label>
+      <Input id="username" {...register('username')} />
       {errors.username && (
         <FormValidationMessage errorMessage={errors.username.message} />
       )}
 
-      <label htmlFor="email">Email</label>
-      <input id="email" {...register('email')} />
+      <Label htmlFor="email">Email</Label>
+      <Input id="email" {...register('email')} />
       {errors.email && (
         <FormValidationMessage errorMessage={errors.email.message} />
       )}
 
-      <label htmlFor="password">Password</label>
-      <input id="password" type="password" {...register('password')} />
+      <Label htmlFor="password">Password</Label>
+      <Input id="password" type="password" {...register('password')} />
       {errors.password && (
         <FormValidationMessage errorMessage={errors.password.message} />
       )}
 
-      <Button type="submit" className="bg-green-600 text-white">
-        Signup
+      <Button variant="outline" type="submit">
+        Sign up
       </Button>
     </form>
   );

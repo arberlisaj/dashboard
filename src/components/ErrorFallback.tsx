@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import Button from './Button';
+import { Button } from './ui/button';
 
 interface Props {
   title: string;
@@ -11,8 +11,8 @@ const NotFound = ({ title, message }: Props) => {
   return (
     <>
       <h1 className="text-3xl">{title}</h1>
-      <p className="text-xl my-1 mb-1.5"> {message}</p>
-      <Button handleClick={() => navigate('/')}>Go Back</Button>
+      <p className="my-1 mb-1.5 text-xl"> {message}</p>
+      <Button onClick={() => navigate('/')}>Go Back</Button>
     </>
   );
 };

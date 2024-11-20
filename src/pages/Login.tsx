@@ -1,4 +1,3 @@
-import Button from '@/components/Button';
 import LoginForm from '@/components/LoginForm';
 import SignupForm from '@/components/SignupForm';
 import { useState } from 'react';
@@ -12,11 +11,11 @@ const Login = () => {
   }
 
   return (
-    <div className="bg-background min-h-screen p-2">
+    <div className="min-h-screen bg-white p-2">
       {loginState ? <LoginForm /> : <SignupForm />}
-      <Button handleClick={handleToggle}>
-        {loginState ? 'Dont have ' : 'Have '} an account?
-      </Button>
+      <button onClick={handleToggle}>
+        {loginState ? "Don't have " : 'Have '} an account?
+      </button>
     </div>
   );
 };

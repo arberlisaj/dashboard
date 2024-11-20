@@ -3,8 +3,10 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import * as z from 'zod';
-import Button from './Button';
 import FormValidationMessage from './FormValidationMessage';
+import { Button } from './ui/button';
+import { Input } from './ui/input';
+import { Label } from './ui/label';
 
 const schema = z.object({
   username: z.string().min(4, 'Username is required'),
@@ -36,17 +38,17 @@ const LoginForm = () => {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <label htmlFor="username">Username</label>
-      <input id="username" {...register('username')} />
+      <Label htmlFor="username">Username</Label>
+      <Input id="username" {...register('username')} />
       {errors.username && (
         <FormValidationMessage errorMessage={errors.username.message} />
       )}
-      <label htmlFor="password">Password</label>
-      <input id="password" type="password" {...register('password')} />
+      <Label htmlFor="password">Password</Label>
+      <Input id="password" type="password" {...register('password')} />
       {errors.password && (
         <FormValidationMessage errorMessage={errors.password.message} />
       )}
-      <Button type="submit" className="bg-green-600 text-white">
+      <Button variant="outline" type="submit">
         Login
       </Button>
     </form>

@@ -1,12 +1,12 @@
-import Button from '@/components/Button';
+import { Button } from '@/components/ui/button';
 import useAuthStore from '@/store';
 
 const Profile = () => {
   const { logout } = useAuthStore();
   return (
     <div>
-      <h1>Wassup dawg</h1>
-      <Button className="bg-red-600 text-white" handleClick={() => logout()}>
+      <h1>Hello dawg!</h1>
+      <Button variant="destructive" onClick={() => logout()}>
         Logout
       </Button>
     </div>

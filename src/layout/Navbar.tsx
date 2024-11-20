@@ -8,9 +8,9 @@ interface Props {
 
 const Navbar = ({ handleAsideState }: Props) => {
   return (
-    <nav className="col-span-5 p-2 md:px-3 py-3 w-full flex justify-between gap-2 items-center bg-navbar_bg">
+    <nav className="col-span-5 flex w-full items-center justify-between gap-2 bg-navbar_bg p-2 py-3 md:px-3">
       <DashboardLogo className="md:hidden" />
-      <div className="flex items-center gap-1 ml-auto">
+      <div className="ml-auto flex items-center gap-1">
         <DarkMode />
         <button onClick={handleAsideState} className="md:hidden">
           <img src={MenuSvg} alt="Menu" />
