@@ -28,7 +28,7 @@ const LoginForm = () => {
   const navigate = useNavigate();
 
   const onSubmit = (data: FormData) => {
-    if (data.username === 'Arber' && data.password === 'password') {
+    if (data.username === 'janedoe' && data.password === 'password') {
       login(data.username);
       navigate('/');
     } else {
@@ -39,16 +39,26 @@ const LoginForm = () => {
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <Label htmlFor="username">Username</Label>
-      <Input id="username" {...register('username')} />
+      <Input
+        type="text"
+        placeholder="e.g. janedoe"
+        id="username"
+        {...register('username')}
+      />
       {errors.username && (
         <FormValidationMessage errorMessage={errors.username.message} />
       )}
       <Label htmlFor="password">Password</Label>
-      <Input id="password" type="password" {...register('password')} />
+      <Input
+        type="password"
+        placeholder="password"
+        id="password"
+        {...register('password')}
+      />
       {errors.password && (
         <FormValidationMessage errorMessage={errors.password.message} />
       )}
-      <Button variant="outline" type="submit">
+      <Button className="mt-2" variant="outline" type="submit">
         Login
       </Button>
     </form>

@@ -74,7 +74,7 @@ const SignupForm = () => {
         <FormValidationMessage errorMessage={errors.password.message} />
       )}
 
-      <Button variant="outline" type="submit">
+      <Button variant="outline" className="mt-2" type="submit">
         Sign up
       </Button>
     </form>
