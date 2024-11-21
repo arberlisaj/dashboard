@@ -25,8 +25,8 @@ const Login = () => {
         <div className="mx-auto max-w-[450px] rounded border p-3">
           {loginState ? <LoginForm /> : <SignupForm />}
           <hr className="my-2" />
-          <Button onClick={handleToggle}>
-            {loginState ? 'Sign Up' : 'Login'}
+          <Button className="px-1" variant="link" onClick={handleToggle}>
+            {loginState ? "Don't have an account?" : 'Already have an account?'}
           </Button>
         </div>
       </div>
