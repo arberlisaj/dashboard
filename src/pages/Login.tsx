@@ -11,24 +11,31 @@ const Login = () => {
   }
 
   return (
-    <section className="min-h-screen items-center bg-white p-2">
-      <div className="mx-auto max-w-[600px] md:pt-10">
+    <section className="flex min-h-screen flex-col justify-between gap-10 bg-background">
+      <div className="mx-auto max-w-[600px] p-2 md:pt-8">
         <div>
-          <h1 className="text-center text-4xl text-blue-800">
+          <h1 className="text-center text-4xl text-purple-700">
             Keep track of students.
           </h1>
-          <p className="my-1 text-center text-lg text-gray-500">
+          <p className="mb-4 mt-1 text-center text-lg text-gray-500">
             Keep track of your students our dashboard blah blah the usual crap.
-            I am just trying to fill this blank space.
+            I am just trying to fill this blank space yada yada.
           </p>
         </div>
-        <div className="mx-auto max-w-[450px] rounded border p-3">
+        <div className="border-border_clr mx-auto max-w-[450px] rounded border p-3 dark:bg-red-300">
           {loginState ? <LoginForm /> : <SignupForm />}
-          <hr className="my-2" />
+          <hr className="border-border_clr my-2" />
           <Button className="px-1" variant="link" onClick={handleToggle}>
             {loginState ? "Don't have an account?" : 'Already have an account?'}
           </Button>
         </div>
+      </div>
+
+      <div className="bg-navbar_bg py-7">
+        <p className="text-center text-gray-300">
+          &copy; 2021 All Rights Reserved.{' '}
+          <span className="text-purple-600">Privacy Policy</span>
+        </p>
       </div>
     </section>
   );

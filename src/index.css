@@ -67,19 +67,6 @@
     @apply text-primary;
   }
 
-  input {
-    @apply block border px-2 py-1;
-  }
-
-  table,
-  td,
-  th {
-    @apply border-border border p-2;
-  }
-  table th {
-    @apply text-left;
-  }
-
   .aside-li a {
     @apply my-1 flex items-center gap-2 rounded-bl rounded-tl py-3 pl-3 text-sm hover:bg-gray-700;
   }

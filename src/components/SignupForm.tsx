@@ -45,31 +45,56 @@ const SignupForm = () => {
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <Label htmlFor="name">Name</Label>
-      <Input id="name" {...register('name')} />
+      <Input
+        id="name"
+        type="text"
+        placeholder="First Name"
+        {...register('name')}
+      />
       {errors.name && (
         <FormValidationMessage errorMessage={errors.name.message} />
       )}
 
       <Label htmlFor="lastName">Last Name</Label>
-      <Input id="lastName" {...register('lastName')} />
+      <Input
+        id="lastName"
+        type="text"
+        placeholder="Last Name"
+        {...register('lastName')}
+      />
       {errors.lastName && (
         <FormValidationMessage errorMessage={errors.lastName.message} />
       )}
 
       <Label htmlFor="username">Username</Label>
-      <Input id="username" {...register('username')} />
+      <Input
+        id="username"
+        type="text"
+        placeholder="e.g. janedoe"
+        {...register('username')}
+      />
       {errors.username && (
         <FormValidationMessage errorMessage={errors.username.message} />
       )}
 
       <Label htmlFor="email">Email</Label>
-      <Input id="email" {...register('email')} />
+      <Input
+        id="email"
+        type="email"
+        placeholder="e.g. example@mail.com"
+        {...register('email')}
+      />
       {errors.email && (
         <FormValidationMessage errorMessage={errors.email.message} />
       )}
 
       <Label htmlFor="password">Password</Label>
-      <Input id="password" type="password" {...register('password')} />
+      <Input
+        id="password"
+        type="password"
+        placeholder="password"
+        {...register('password')}
+      />
       {errors.password && (
         <FormValidationMessage errorMessage={errors.password.message} />
       )}
