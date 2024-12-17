@@ -48,6 +48,7 @@ const SignupForm = () => {
       <Input
         id="name"
         type="text"
+        autoFocus
         placeholder="First Name"
         {...register('name')}
       />

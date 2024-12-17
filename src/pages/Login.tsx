@@ -22,10 +22,9 @@ const Login = () => {
             I am just trying to fill this blank space yada yada.
           </p>
         </div>
-        <div className="border-border_clr mx-auto max-w-[450px] rounded border p-3 dark:bg-red-300">
+        <div className="mx-auto max-w-[450px] rounded border border-border_clr p-3 dark:bg-red-300">
           {loginState ? <LoginForm /> : <SignupForm />}
-          <hr className="border-border_clr my-2" />
-          <Button className="px-1" variant="link" onClick={handleToggle}>
+          <Button className="mt-1.5 px-1" variant="link" onClick={handleToggle}>
             {loginState ? "Don't have an account?" : 'Already have an account?'}
           </Button>
         </div>

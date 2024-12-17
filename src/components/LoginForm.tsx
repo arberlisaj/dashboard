@@ -42,6 +42,7 @@ const LoginForm = () => {
       <Input
         type="text"
         placeholder="e.g. janedoe"
+        autoFocus
         id="username"
         {...register('username')}
       />
