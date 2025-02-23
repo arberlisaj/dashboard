@@ -11,7 +11,7 @@ const Login = () => {
   }
 
   return (
-    <section className="flex min-h-screen flex-col justify-between gap-10 bg-background">
+    <section className="flex min-h-screen flex-col justify-between gap-10 bg-white">
       <div className="mx-auto max-w-[600px] p-2 md:pt-8">
         <div>
           <h1 className="text-center text-4xl text-purple-700">

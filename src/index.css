@@ -64,7 +64,7 @@
 
 @layer base {
   body {
-    @apply text-primary;
+    @apply text-primary bg-background;
   }
 
   .aside-li a {

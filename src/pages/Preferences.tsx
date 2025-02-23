@@ -1,5 +1,12 @@
-const Preferences = () => {
-  return <div>Preferences</div>;
-};
+import DarkMode from "@/components/DarkMode"
 
-export default Preferences;
+const Preferences = () => {
+  return (
+    <div>
+      <h1>Preferences</h1>
+      <DarkMode/>
+    </div>
+  )
+}
+
+export default Preferences

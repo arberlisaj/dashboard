@@ -3,6 +3,8 @@ import { persist, createJSONStorage } from 'zustand/middleware';
 
 interface AuthStore {
   user: string;
+  theme: "dark" | "light";
+  setTheme: (theme: "dark" | "light") => void;
   login: (username: string) => void;
   logout: () => void;
 }
@@ -10,6 +12,8 @@ interface AuthStore {
 const useAuthStore = create<AuthStore>()(
   persist(
     (set) => ({
+      theme:'dark',
+      setTheme: (theme) => set(() => ({ theme })),
       user: '',
       login: (username) => set(() => ({ user: username })),
       logout: () => set(() => ({ user: '' })),

@@ -1,34 +1,31 @@
-import DarkModeSvg from '@/assets/navbar/moon.svg';
-import LightModeSvg from '@/assets/navbar/sun.svg';
-import { useEffect, useState } from 'react';
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from './ui/select';
+import useAuthStore from '@/store';
 
 const DarkMode = () => {
-  const [theme, setTheme] = useState<'dark' | 'light'>(
-    localStorage.theme || 'dark',
-  );
-
-  useEffect(() => {
-    if (theme === 'dark') {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-    localStorage.theme = theme;
-  }, [theme]);
+  const { theme, setTheme } = useAuthStore();
 
   return (
-    <button
-      className="rounded p-0.5"
-      onClick={() =>
-        setTheme((prevValue) => (prevValue === 'dark' ? 'light' : 'dark'))
-      }
+    <Select
+      defaultValue={theme}
+      onValueChange={(value) => setTheme(value as 'dark' | 'light')}
     >
-      {theme === 'dark' ? (
-        <img src={DarkModeSvg} alt="Dark Mode" />
-      ) : (
-        <img src={LightModeSvg} alt="Light Mode" />
-      )}
-    </button>
+      <SelectTrigger className="w-[180px]">
+        <SelectValue placeholder="Appearance" />
+      </SelectTrigger>
+      <SelectContent>
+        <SelectGroup>
+          <SelectItem value="dark">Dark Mode</SelectItem>
+          <SelectItem value="light">Light Mode</SelectItem>
+        </SelectGroup>
+      </SelectContent>
+    </Select>
   );
 };
 
