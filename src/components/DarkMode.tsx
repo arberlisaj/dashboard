@@ -6,14 +6,14 @@ import {
   SelectTrigger,
   SelectValue,
 } from './ui/select';
-import useAuthStore from '@/store';
+import { useDarkMode } from '@/context/DarkModeProvider';
 
 const DarkMode = () => {
-  const { theme, setTheme } = useAuthStore();
+  const { theme, setTheme } = useDarkMode();
 
   return (
     <Select
-      defaultValue={theme}
+      value={theme}
       onValueChange={(value) => setTheme(value as 'dark' | 'light')}
     >
       <SelectTrigger className="w-[180px]">

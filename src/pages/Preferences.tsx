@@ -1,12 +1,12 @@
-import DarkMode from "@/components/DarkMode"
+import DarkMode from '@/components/DarkMode';
 
 const Preferences = () => {
   return (
     <div>
       <h1>Preferences</h1>
-      <DarkMode/>
+      <DarkMode />
     </div>
-  )
-}
+  );
+};
 
-export default Preferences
+export default Preferences;
